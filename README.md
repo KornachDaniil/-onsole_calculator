@@ -1,2 +1,2 @@
-# -onsole_calculator
+# -Console_calculator
 Консольный калькулятор.
