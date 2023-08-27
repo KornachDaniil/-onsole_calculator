@@ -1,11 +1,13 @@
 ﻿#include <iostream>
+#include <math.h>
 using namespace std;
 	
 double Sum(double firstNum, double secondNum);
 double Difference(double firstNum, double secondNum);
 double Multiplication(double firstNum, double secondNum);
 double Division(double firstNum, double secondNum);
-double Sqrt(double number);
+double Number_Squared(double number);
+double Root(double number);
 
 
 int main() {
@@ -18,7 +20,7 @@ int main() {
 			cin >> firstNum;
 			cout << "\nВыберите действие: ";
 			cin >> operation;
-			if (operation != '&') {
+			if (operation != '^' && operation != '&') {
 				cout << "\nВведите второе число: ";
 				cin >> secondNum;
 			}
@@ -26,7 +28,7 @@ int main() {
 		else {
 			cout << "\nВыберите действие: ";
 			cin >> operation;
-			if (operation != '&') {
+			if (operation != '^' && operation != '&') {
 				cout << "\nВведите второе число: ";
 				cin >> secondNum;
 			}
@@ -48,9 +50,13 @@ int main() {
 			firstNum = Division(firstNum, secondNum);
 			cout << "Деление равно: " << firstNum;
 			break;
-		case '&':
-			firstNum = Sqrt(firstNum);
+		case '^':
+			firstNum = Number_Squared(firstNum);
 			cout << "Квадрат равен: " << firstNum;
+			break;
+		case '&':
+			firstNum = Root(firstNum);
+			cout << "Корень числа равен: " << firstNum;
 			break;
 		default:
 			cout << "Вы ввели некорректное действие.";
@@ -77,6 +83,10 @@ double Division(double firstNum, double secondNum) {
 	return firstNum / secondNum;
 }
 
-double Sqrt(double number) {
+double Number_Squared(double number) {
 	return number * number;
+}
+
+double Root(double number) {
+	return sqrt(number);
 }
