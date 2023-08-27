@@ -7,7 +7,7 @@ double Difference(double *firstNum, double *secondNum);
 double Multiplication(double *firstNum, double *secondNum);
 double Division(double *firstNum, double *secondNum);
 double Number_Squared(double *number);
-double Root(double *number);
+double Sqrt(double *number);
 
 
 int main() {
@@ -55,7 +55,7 @@ int main() {
 			cout << "Квадрат равен: " << firstNum;
 			break;
 		case '&':
-			firstNum = Root(&firstNum);
+			firstNum = Sqrt(&firstNum);
 			cout << "Корень числа равен: " << firstNum;
 			break;
 		default:
@@ -87,6 +87,6 @@ double Number_Squared(double *number) {
 	return *number * *number;
 }
 
-double Root(double *number) {
+double Sqrt(double *number) {
 	return sqrt(*number);
 }
