@@ -2,18 +2,18 @@
 #include <math.h>
 using namespace std;
 	
-double Sum(double *firstNum, double *secondNum);
-double Difference(double *firstNum, double *secondNum);
-double Multiplication(double *firstNum, double *secondNum);
-double Division(double *firstNum, double *secondNum);
-double Number_Squared(double *number);
-double Sqrt(double *number);
+double Sum(register double *firstNum, register double *secondNum);
+double Difference(register double *firstNum, register double *secondNum);
+double Multiplication(register double *firstNum, register double *secondNum);
+double Division(register double *firstNum, register double *secondNum);
+double Number_Squared(register double *number);
+double Sqrt(register double *number);
 
 
 int main() {
 	setlocale(LC_ALL, "ru");
-	double firstNum, secondNum;
-	char operation = ' ';
+	register double firstNum, secondNum;
+	register char operation = ' ';
 	do {
 		if (operation == ' ') {
 			cout << "Введите первое число: ";
@@ -67,26 +67,26 @@ int main() {
 	return 0;
 }
 
-double Sum(double *firstNum, double *secondNum) {
+double Sum(register double *firstNum, register double *secondNum) {
 	return *firstNum + *secondNum;
 }
 
-double Difference(double *firstNum, double *secondNum) {
+double Difference(register double *firstNum, register double *secondNum) {
 	return *firstNum - *secondNum;
 }
 
-double Multiplication(double *firstNum, double *secondNum) {
+double Multiplication(register double *firstNum, register double *secondNum) {
 	return *firstNum * *secondNum;
 }
 
-double Division(double *firstNum, double *secondNum) {
+double Division(register double *firstNum, register double *secondNum) {
 	return *firstNum / *secondNum;
 }
 
-double Number_Squared(double *number) {
+double Number_Squared(register double *number) {
 	return *number * *number;
 }
 
-double Sqrt(double *number) {
+double Sqrt(register double *number) {
 	return sqrt(*number);
 }
